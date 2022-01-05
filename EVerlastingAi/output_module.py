@@ -1,6 +1,6 @@
-from assistant_details import name  
+import assistant_details
 
 #command input line
 def output(o):
-    print(name+": " + str(o))
-    print()
+    print(assistant_details.name+": " + str(o))
+    print(" ")
