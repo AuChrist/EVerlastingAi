@@ -31,6 +31,9 @@
     <Compile Include="internet_checker.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="speak_module.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="welcome.py">
       <SubType>Code</SubType>
     </Compile>

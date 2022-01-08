@@ -59,3 +59,36 @@ def get_last_seen():
     query = "SELECT value FROM memory WHERE name = 'last_seen_date'"
     cur.execute(query)
     return cur.fetchall()[0][0]
+
+def turn_on_speech():
+    if (check_internet_connection):
+        con = create_connection()
+        cur = con.cursor()
+        query = "UPDATE memory SET value = 'on' where name = 'speech'"
+        cur.execute(query)
+        con.commit()
+
+        return ("I will speak now")
+    else:
+        return ("Hey please turn on internet on first")
+
+def turn_off_speech():
+    con = create_connection()
+    cur = con.cursor()
+    query = "UPDATE memory SET value = 'off' where name = 'speech'"
+    cur.execute(query)
+    con.commit()
+
+    return ("I won't speak now")
+
+def speak_is_on():
+    con = create_connection()
+    cur = con.cursor()
+    query = "SELECT value FROM memory WHERE name = 'speech'"
+    cur.execute(query)
+    ans = str(cur.fetchall()[0][0])
+
+    if ans == "on":
+        return True
+    else:
+        return False
