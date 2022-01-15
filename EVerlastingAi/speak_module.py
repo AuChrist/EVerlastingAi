@@ -4,5 +4,6 @@ import os
 
 def speak(text):
     tts = gTTS(text)
-    tts.save('C:/Users/Yukino Arata/Music/DBSuara/speech.mp3')
-    playsound('C:/Users/Yukino Arata/Music/DBSuara/speech.mp3')
+    tts.save('D:/DBSuara/speech.mp3')
+    playsound('D:/DBSuara/speech.mp3')
+    os.remove('D:/DBSuara/speech.mp3')
