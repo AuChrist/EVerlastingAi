@@ -21,7 +21,7 @@ def process(query):
         
     if answer == "got time details":
         return "Time is " + get_time()
-
+    
     if answer == "got date details":
         return "Date is " + get_date()
 

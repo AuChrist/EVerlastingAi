@@ -1,5 +1,7 @@
 import mysql.connector 
 from mysql.connector import Error
+from internet_checker import *
+from speak_module import *
 
 def create_connection():
     connection = mysql.connector.connect(host ='localhost',
@@ -67,10 +69,9 @@ def turn_on_speech():
         query = "UPDATE memory SET value = 'on' where name = 'speech'"
         cur.execute(query)
         con.commit()
-
         return ("I will speak now")
     else:
-        return ("Hey please turn on internet on first")
+        return ("Hey please turn on internet first")
 
 def turn_off_speech():
     con = create_connection()
@@ -78,7 +79,6 @@ def turn_off_speech():
     query = "UPDATE memory SET value = 'off' where name = 'speech'"
     cur.execute(query)
     con.commit()
-
     return ("I won't speak now")
 
 def speak_is_on():
