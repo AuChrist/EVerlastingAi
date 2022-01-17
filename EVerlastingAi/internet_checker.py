@@ -24,5 +24,4 @@ def check_on_wikipedia(query):
         return data
     except Exception as e:
         return ""
-    
 

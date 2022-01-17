@@ -7,7 +7,7 @@ os.system("cls")
 
 #-------Greet Section-------#
 welcome.greet()
-
+        
 
 #-------Global Section------#
 while(True):

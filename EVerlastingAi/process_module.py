@@ -3,6 +3,7 @@ from time_module import get_time , get_date
 from module_database import *
 from input_module import take_input
 from internet_checker import check_internet_connection, check_on_wikipedia
+from web_module import *
 import assistant_details
 
 def process(query):
@@ -19,10 +20,10 @@ def process(query):
                 return take_input()
     
         
-    if answer == "got time details":
+    elif answer == "got time details":
         return "Time is " + get_time()
     
-    if answer == "got date details":
+    elif answer == "got date details":
         return "Date is " + get_date()
 
     if answer == "on speak":
@@ -30,8 +31,15 @@ def process(query):
     elif answer == "off speak":
         return turn_off_speech()
 
+    elif answer == "open facebook":
+        open_facebook()
+        return "opening facebook"
 
-    if answer == "Check internet connection":
+    elif answer == "open google":
+        open_google()
+        return "opening google"
+
+    elif answer == "Check internet connection":
         if check_internet_connection:
             return "Internet is Connected"
         else:
@@ -61,3 +69,7 @@ def process(query):
             else:
                 insert_question_and_answer(query, ans)
                 return "Thanks i will remember it for the next time"
+
+
+    if answer == "exit":
+        os._exit(0)
